@@ -32,7 +32,10 @@ namespace Reface.AppStarter.AppContainerBuilders
         {
             AutofacContainerBuilder autofacContainerBuilder = (AutofacContainerBuilder)sender;
             ContainerBuilder containerBuilder = autofacContainerBuilder.AutofacContainerBuilderInstance;
-            this.assemblies.ForEach(x => containerBuilder.RegisterApiControllers(x));
+            this.assemblies.ForEach(x =>
+            {
+                containerBuilder.RegisterApiControllers(x);
+            });
         }
     }
 }

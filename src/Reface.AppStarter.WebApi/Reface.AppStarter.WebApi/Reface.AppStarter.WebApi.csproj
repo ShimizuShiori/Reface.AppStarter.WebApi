@@ -48,8 +48,8 @@
     <Compile Include="AppContainers\IControllerAppContainer.cs" />
     <Compile Include="AppContainerBuilders\IControllerAppContainerBuilder.cs" />
     <Compile Include="AppSetupHttpApplication.cs" />
-    <Compile Include="Config\WebApiConfig.cs" />
-    <Compile Include="Attributes\ApiRoute.cs" />
+    <Compile Include="Configs\WebApiConfig.cs" />
+    <Compile Include="Attributes\ApiRouteAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebApiAppModule.cs" />
     <Compile Include="WebApiRouterSetup.cs" />

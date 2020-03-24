@@ -1,6 +1,6 @@
 ﻿using Autofac.Integration.WebApi;
-using Reface.AppStarter.Attributes;
-using Reface.AppStarter.Config;
+using Reface.AppStarter.Configs;
+using Reface.AppStarter.WebApi.Attributes;
 using System.Web.Http;
 
 namespace Reface.AppStarter.AppContainers
@@ -19,7 +19,7 @@ namespace Reface.AppStarter.AppContainers
         {
             IComponentContainer componentContainer = app.GetAppContainer<IComponentContainer>();
             WebApiConfig webApiConfig = componentContainer.CreateComponent<WebApiConfig>();
-            ApiRoute.SetGolbalPrefix(webApiConfig.Prefix);
+            ApiRouteAttribute.SetGolbalPrefix(webApiConfig.Prefix);
 
             if (componentContainer is AutofacContainerComponentContainer autofac)
             {

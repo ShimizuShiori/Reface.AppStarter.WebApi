@@ -1,6 +1,6 @@
 ﻿using Reface.AppStarter.Attributes;
 
-namespace Reface.AppStarter.Config
+namespace Reface.AppStarter.Configs
 {
     [Config("WebApi")]
     public class WebApiConfig
