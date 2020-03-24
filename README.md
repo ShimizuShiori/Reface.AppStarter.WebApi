@@ -14,6 +14,18 @@
 
 [AppModule]: https://github.com/ShimizuShiori/Reface.AppStarter
 
+# 依赖项
+
+* *Autofac.WebApi2 @ 4.2.1*
+* *Microsoft.AspNet.WebApi @ 5.2.7*
+* *Reface.AppStarter @ 1.1.0*
+* *Reface.CommandBus @ 1.1.1*
+* *Reface.EventBus @ 3.2.0*
+
+# Nuget 地址
+
+
+
 # 使用方法
 
 ## 1 开发 *ApiController* 的模块
@@ -76,4 +88,8 @@ public class MyWebApiAppModule : AppModule
 }
 ```
 
-最后一步，创建 *Global.asax* 文件
+最后一步，创建 *Global.asax* ( 全局应用程序类 ) ，让其继承于 *RefaceHttpApplication&lt;MyWebApiAppModule>*
+
+> MyWebApiAppModule，就是你的 *WebApi* 启动项的 *AppModule* 类型。
+
+你可以编写构造函数，向父类传递 *Reface.AppStarter* 的配置文件路径，默认是从 *WebApi* 启动项所在目录中的 *app.json* 中加载。
