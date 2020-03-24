@@ -50,6 +50,7 @@
     <Compile Include="AppSetupHttpApplication.cs" />
     <Compile Include="Configs\WebApiConfig.cs" />
     <Compile Include="Attributes\ApiRouteAttribute.cs" />
+    <Compile Include="Listeners\SetGolbalPrefixOnAppStarted.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebApiAppModule.cs" />
     <Compile Include="WebApiRouterSetup.cs" />

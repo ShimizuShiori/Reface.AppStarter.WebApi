@@ -4,6 +4,7 @@ using Reface.AppStarter.AppModules;
 namespace Reface.AppStarter
 {
     [AutoConfigAppModule]
+    [ComponentScanAppModule]
     public class WebApiAppModule : AppModule
     {
         public override void OnUsing(AppSetup setup, IAppModule targetModule)

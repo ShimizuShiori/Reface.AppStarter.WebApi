@@ -18,8 +18,8 @@ namespace Reface.AppStarter.AppContainers
         public void OnAppStarted(App app)
         {
             IComponentContainer componentContainer = app.GetAppContainer<IComponentContainer>();
-            WebApiConfig webApiConfig = componentContainer.CreateComponent<WebApiConfig>();
-            ApiRouteAttribute.SetGolbalPrefix(webApiConfig.Prefix);
+            //WebApiConfig webApiConfig = componentContainer.CreateComponent<WebApiConfig>();
+            //ApiRouteAttribute.SetGolbalPrefix(webApiConfig.Prefix);
 
             if (componentContainer is AutofacContainerComponentContainer autofac)
             {
