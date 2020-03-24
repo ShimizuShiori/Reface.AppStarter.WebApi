@@ -7,6 +7,8 @@
     <authors>ShimizuShiori</authors>
     <owners>ShimizuShiori</owners>
     <description>启动 WebApi 项目</description>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/ShimizuShiori/Reface.AppStarter.WebApi</projectUrl>
     <copyright>Copyright 2019</copyright>
     <dependencies>
       <dependency id="Autofac.WebApi2" version="4.2.1" />
