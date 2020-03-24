@@ -13,3 +13,67 @@
 * 自定义的 *ApiRoute* 可以应用 *Reface.AppStarter.Config.WebApiConfig* 中的 *WebApi Url Prefix* 
 
 [AppModule]: https://github.com/ShimizuShiori/Reface.AppStarter
+
+# 使用方法
+
+## 1 开发 *ApiController* 的模块
+
+你可以将你的 *ApiController* 根据不同的业务功能放在不同的 *Library* 中。
+
+这些 *ApiController* 都需要依赖 *Reface.AppStarter.WebApi*
+
+你需要为每一个 *Library* 创建一个 *AppModule* 让它们成为一个 **模块**。并为这些 *AppModule* 添加 *WebApiAppModule*
+
+```csharp
+// UsersAppModule.cs
+[WebApiAppModule]
+[ComponentScanAppModule]
+[AutoConfigAppModule]
+public class UsersAppModule : AppModule
+{
+}
+```
+
+```csharp
+/// OrdersAppModule.cs
+[WebApiAppModule]
+[ComponentScanAppModule]
+[AutoConfigAppModule]
+public class OrdersAppModule : AppModule
+{
+}
+```
+
+```csharp
+/// StockAppModule.cs
+[WebApiAppModule]
+[ComponentScanAppModule]
+[AutoConfigAppModule]
+public class StockAppModule : AppModule
+{
+}
+```
+
+## 2 开发 *WebApi* 启动项
+
+创建你的 *WebApi* 启动项目，与平时创建 *WebApi* 项目的过程相同。
+
+让你的 *WebApi* 启动项依赖 *Reface.AppStarter* 。
+
+创建 *WebApi* 启动项的 *AppModule*
+
+> 在 *Reface.AppStarted* 中，所有的 *Library* 都应当有一个 *AppModule*
+
+让你的 *AppModule* 依赖其它 *AppModule*
+
+```csharp
+[UsersAppModule]
+[OrdersAppModule]
+[StockAppModule]
+public class MyWebApiAppModule : AppModule
+{
+
+}
+```
+
+最后一步，创建 *Global.asax* 文件

@@ -3,12 +3,12 @@ using System.Web;
 
 namespace Reface.AppStarter
 {
-    public class AppSetupHttpApplication<TAppModule> : HttpApplication
+    public class RefaceHttpApplication<TAppModule> : HttpApplication
         where TAppModule : IAppModule, new()
     {
         private readonly string jsonPath;
 
-        public AppSetupHttpApplication(string jsonPath = "./app.json")
+        public RefaceHttpApplication(string jsonPath = "./app.json")
         {
             this.jsonPath = jsonPath;
         }

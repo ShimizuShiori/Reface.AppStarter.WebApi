@@ -2,7 +2,7 @@
 
 namespace WebApplication1
 {
-    public class WebApiApplication : AppSetupHttpApplication<WebAppModule>
+    public class WebApiApplication : RefaceHttpApplication<WebAppModule>
     {
         //protected void Application_Start()
         //{
