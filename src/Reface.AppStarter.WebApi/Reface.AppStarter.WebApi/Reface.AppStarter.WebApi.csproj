@@ -47,7 +47,7 @@
     <Compile Include="AppContainers\ControllerAppContainer.cs" />
     <Compile Include="AppContainers\IControllerAppContainer.cs" />
     <Compile Include="AppContainerBuilders\IControllerAppContainerBuilder.cs" />
-    <Compile Include="AppSetupHttpApplication.cs" />
+    <Compile Include="RefaceHttpApplication.cs" />
     <Compile Include="Configs\WebApiConfig.cs" />
     <Compile Include="Attributes\ApiRouteAttribute.cs" />
     <Compile Include="Listeners\SetGolbalPrefixOnAppStarted.cs" />
