@@ -1,7 +1,6 @@
 ﻿using Reface.AppStarter.AppContainerBuilders;
-using Reface.AppStarter.AppModules;
 
-namespace Reface.AppStarter
+namespace Reface.AppStarter.AppModules
 {
     [AutoConfigAppModule]
     [ComponentScanAppModule]

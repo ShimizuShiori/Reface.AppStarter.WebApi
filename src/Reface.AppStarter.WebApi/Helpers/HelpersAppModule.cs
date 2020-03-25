@@ -1,5 +1,4 @@
-﻿using Reface.AppStarter;
-using Reface.AppStarter.AppModules;
+﻿using Reface.AppStarter.AppModules;
 
 namespace Helpers
 {
