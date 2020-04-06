@@ -61,7 +61,7 @@
       <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Reface.AppStarter, Version=0.10.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Reface.AppStarter.1.2.0-beta.1\lib\net461\Reface.AppStarter.dll</HintPath>
+      <HintPath>..\..\packages\Reface.AppStarter.1.5.1\lib\net461\Reface.AppStarter.dll</HintPath>
     </Reference>
     <Reference Include="Reface.AppStarter.WebApi">
       <HintPath>..\Reface.AppStarter.WebApi\bin\Debug\Reface.AppStarter.WebApi.dll</HintPath>
