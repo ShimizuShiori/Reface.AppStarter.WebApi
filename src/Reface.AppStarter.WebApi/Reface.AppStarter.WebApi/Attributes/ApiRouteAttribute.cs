@@ -5,7 +5,7 @@ namespace Reface.AppStarter.WebApi.Attributes
 {
     /// <summary>
     /// Api 的路由，
-    /// 使用此特征定义路由，可以将 <see cref="Reface.AppStarter.Config.WebApiConfig.Prefix"/> 中的值加入
+    /// 使用此特征定义路由，可以将 <see cref="Reface.AppStarter.Config.WebApiConfig.Prefix"/> 中的值作为前缀
     /// </summary>
     public class ApiRouteAttribute : RoutePrefixAttribute
     {

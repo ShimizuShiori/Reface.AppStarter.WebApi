@@ -1,13 +1,12 @@
-﻿using Reface.AppStarter.AppContainers;
+﻿using Autofac;
+using Autofac.Integration.WebApi;
+using Reface.AppStarter.AppContainers;
 using System.Collections.Generic;
 using System.Reflection;
-using Autofac.Integration.WebApi;
-using Autofac;
 
 namespace Reface.AppStarter.AppContainerBuilders
 {
-    public class ControllerAppContainerBuilder
-        : IControllerAppContainerBuilder
+    public class ControllerAppContainerBuilder : IAppContainerBuilder
     {
         private readonly List<Assembly> assemblies
             = new List<Assembly>();
