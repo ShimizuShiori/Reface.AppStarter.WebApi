@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "App": {
+      "type": "object",
+      "description": "面向 Reface.AppStarter 的配置",
+      "properties": {
+        "GenerateConfigJsonSchema": {
+          "description": "是否生成与配置文件相关的 JsonSchema 文件",
+          "type": "boolean"
+        }
+      }
+    },
+    "WebApi": {
+      "type": "object",
+      "description": "WebApiConfig",
+      "properties": {
+        "Prefix": {
+          "description": "Prefix",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

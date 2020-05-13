@@ -1,5 +1,9 @@
 ﻿using Reface.AppStarter.AppModules;
 using Reface.AppStarter.WebApi;
+using Reface.AppStarter.WebApi.Attributes;
+using Reface.AppStarter.WebApi.Events;
+using System;
+using System.Reflection;
 using System.Web;
 
 namespace Reface.AppStarter
@@ -9,23 +13,64 @@ namespace Reface.AppStarter
     /// 你可以通过调用父类的函数函数重新指定配置文件的路径。
     /// </summary>
     /// <typeparam name="TAppModule">启动项所在的库的 <see cref="AppModule"/> 类型</typeparam>
-    public class RefaceHttpApplication<TAppModule> : HttpApplication
+    public abstract class RefaceHttpApplication<TAppModule> : HttpApplication
         where TAppModule : IAppModule, new()
     {
-        private readonly string jsonPath;
+        public event EventHandler<OnAppStartedEventArgs> AppStarted;
+        public event EventHandler<OnAppSetupPreparedEventArgs> AppSetupPrepared;
+        public event EventHandler<OnAppSetupBuilderPreparedEventArgs> AppSetupBuilderPrepared;
 
-        public RefaceHttpApplication(string jsonPath = "./app.json")
+        public RefaceHttpApplication()
         {
-            this.jsonPath = jsonPath;
+            this.AppSetupBuilderPrepared += RefaceHttpApplication_AppSetupBuilderPrepared;
+            this.BeginRequest += RefaceHttpApplication_BeginRequest;
+            this.EndRequest += RefaceHttpApplication_EndRequest;
+        }
+
+        private void RefaceHttpApplication_EndRequest(object sender, EventArgs e)
+        {
+            try
+            {
+                IWork work = CurrentWorkAccessor.Get();
+                work.PublishEvent(new EndRequestEvent(this, HttpContext.Current));
+                work.Dispose();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void RefaceHttpApplication_BeginRequest(object sender, EventArgs e)
+        {
+            App app = (App)this.Application.GetApp();
+            var work = app.BeginWork("HttpRequest");
+            HttpContext httpContext = HttpContext.Current;
+            httpContext.Items["WORK"] = work;
+            work.PublishEvent(new BeginRequestEvent(this, httpContext));
+        }
+
+        private void RefaceHttpApplication_AppSetupBuilderPrepared(object sender, OnAppSetupBuilderPreparedEventArgs e)
+        {
+            e.AppSetupBuilder.ConfigPath = this.Server.MapPath(e.AppSetupBuilder.ConfigPath);
         }
 
         protected void Application_Start()
         {
-            string appJsonPath = this.Server.MapPath(this.jsonPath);
-            AppSetup appSetup = new AppSetup(appJsonPath);
+
+            AppSetupBuilderAttribute builder = this.GetType().GetCustomAttribute<AppSetupBuilderAttribute>();
+            if (builder == null) builder = new AppSetupBuilderAttribute();
+            this.AppSetupBuilderPrepared?.Invoke(this, new OnAppSetupBuilderPreparedEventArgs(builder));
+
+            AppSetup appSetup = builder.Build();
+
             TAppModule webAppModule = new TAppModule();
+            this.AppSetupPrepared?.Invoke(this, new OnAppSetupPreparedEventArgs(appSetup));
             var app = appSetup.Start(webAppModule);
+            this.AppStarted?.Invoke(this, new OnAppStartedEventArgs(app));
             this.Application.Set(Constant.APPLICATION_ITEM_KEY, app);
+
+
         }
     }
 }

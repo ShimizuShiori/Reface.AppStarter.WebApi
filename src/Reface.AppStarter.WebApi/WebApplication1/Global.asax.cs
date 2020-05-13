@@ -2,15 +2,12 @@
 
 namespace WebApplication1
 {
+    //[AppSetupBuilder]
     public class WebApiApplication : RefaceHttpApplication<WebAppModule>
     {
-        //protected void Application_Start()
-        //{
-        //    string appJsonPath = this.Server.MapPath("./app.json");
+        public WebApiApplication()
+        {
+        }
 
-        //    AppSetup appSetup = new AppSetup(appJsonPath);
-        //    WebAppModule webAppModule = new WebAppModule();
-        //    appSetup.Start(webAppModule);
-        //}
     }
 }

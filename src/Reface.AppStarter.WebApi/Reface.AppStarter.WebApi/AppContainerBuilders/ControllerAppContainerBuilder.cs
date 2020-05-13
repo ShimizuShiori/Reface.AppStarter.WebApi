@@ -35,6 +35,9 @@ namespace Reface.AppStarter.AppContainerBuilders
             {
                 containerBuilder.RegisterApiControllers(x);
             });
+
+            //GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerActivator), new MyAc());
+            //GlobalConfiguration.Configuration.Filters.Add(new InjectFilter());
         }
     }
 }

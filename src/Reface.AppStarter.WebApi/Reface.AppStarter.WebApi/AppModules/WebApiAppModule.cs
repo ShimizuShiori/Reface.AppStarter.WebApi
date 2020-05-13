@@ -1,4 +1,6 @@
 ﻿using Reface.AppStarter.AppContainerBuilders;
+using Reface.AppStarter.WebApi.Attributes;
+using System.Linq;
 using System.Web.Http;
 
 namespace Reface.AppStarter.AppModules
@@ -14,8 +16,17 @@ namespace Reface.AppStarter.AppModules
         {
             var setup = args.AppSetup;
             var targetModule = args.TargetAppModule;
-            var builder = setup.GetAppContainerBuilder<ControllerAppContainerBuilder>();
-            builder.RegsiterControllerAssembly(targetModule.GetType().Assembly);
+            var controllerBuilder = setup.GetAppContainerBuilder<ControllerAppContainerBuilder>();
+            var filterBuilder = setup.GetAppContainerBuilder<AutoFilterAppContainerBuilder>();
+
+            controllerBuilder.RegsiterControllerAssembly(targetModule.GetType().Assembly);
+
+            args.ScannedAttributeAndTypeInfos
+                .Where(x => x.Attribute is AutoFilterAttribute)
+                .ForEach(x =>
+                {
+                    filterBuilder.AddFilter(x);
+                });
         }
     }
 }

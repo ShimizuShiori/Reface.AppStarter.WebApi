@@ -1,7 +1,6 @@
-﻿using Autofac.Integration.WebApi;
-using Reface.AppStarter.Configs;
-using Reface.AppStarter.WebApi.Attributes;
+﻿using Reface.AppStarter.WebApi;
 using System.Web.Http;
+using System.Web.Http.Dispatcher;
 
 namespace Reface.AppStarter.AppContainers
 {
@@ -18,19 +17,12 @@ namespace Reface.AppStarter.AppContainers
         public void OnAppStarted(App app)
         {
             IComponentContainer componentContainer = app.GetAppContainer<IComponentContainer>();
-            //WebApiConfig webApiConfig = componentContainer.CreateComponent<WebApiConfig>();
-            //ApiRouteAttribute.SetGolbalPrefix(webApiConfig.Prefix);
 
-            if (componentContainer is AutofacContainerComponentContainer autofac)
-            {
-                HttpConfiguration configuration = GlobalConfiguration.Configuration;
-                if (!(configuration.DependencyResolver is AutofacWebApiDependencyResolver))
-                {
-                    GlobalConfiguration.Configure(WebApiRouterSetup.Register);
-                    configuration.DependencyResolver = new AutofacWebApiDependencyResolver(autofac.Container);
-                }
-            }
+            HttpConfiguration configuration = GlobalConfiguration.Configuration;
 
+            GlobalConfiguration.Configure(WebApiRouterSetup.Register);
+            GlobalConfiguration.Configuration.Services
+                .Replace(typeof(IHttpControllerActivator), new HttpControllerActivator());
         }
     }
 }

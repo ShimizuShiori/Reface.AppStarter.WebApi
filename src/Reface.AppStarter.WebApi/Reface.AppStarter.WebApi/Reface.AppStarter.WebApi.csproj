@@ -45,11 +45,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppContainerBuilders\ControllerAppContainerBuilder.cs" />
+    <Compile Include="AppContainerBuilders\AutoFilterAppContainerBuilder.cs" />
+    <Compile Include="AppContainers\FilterAppContainer.cs" />
+    <Compile Include="AutoFilterInfo.cs" />
     <Compile Include="AppContainers\ControllerAppContainer.cs" />
     <Compile Include="AppContainers\IControllerAppContainer.cs" />
     <Compile Include="AppModules\WebApiAppModule.cs" />
+    <Compile Include="Attributes\AutoFilterAttribute.cs" />
+    <Compile Include="Attributes\AutoFilterScopes.cs" />
+    <Compile Include="CurrentWorkAccessor.cs" />
+    <Compile Include="Events\BeginRequestEvent.cs" />
+    <Compile Include="Events\EndRequestEvent.cs" />
+    <Compile Include="FilterProvider.cs" />
+    <Compile Include="HttpControllerActivator.cs" />
+    <Compile Include="OnAppSetupBuilderPreparedEventArgs.cs" />
+    <Compile Include="Attributes\AppSetupBuilderAttribute.cs" />
     <Compile Include="Constant.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="OnAppSetupPreparedEventArgs.cs" />
+    <Compile Include="OnAppStartedEventArgs.cs" />
     <Compile Include="RefaceHttpApplication.cs" />
     <Compile Include="Configs\WebApiConfig.cs" />
     <Compile Include="Attributes\ApiRouteAttribute.cs" />
@@ -68,7 +82,7 @@
       <Version>5.2.7</Version>
     </PackageReference>
     <PackageReference Include="Reface.AppStarter">
-      <Version>2.0.4</Version>
+      <Version>2.1.5</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
