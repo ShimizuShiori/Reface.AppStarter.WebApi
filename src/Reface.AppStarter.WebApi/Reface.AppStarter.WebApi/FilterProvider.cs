@@ -9,6 +9,10 @@ using System.Web.Http.Filters;
 
 namespace Reface.AppStarter.WebApi
 {
+    /// <summary>
+    /// 自定义的过滤器提供器。
+    /// 主要实现了自动加载的过滤器。
+    /// </summary>
     public class FilterProvider : IFilterProvider
     {
         private readonly IEnumerable<AutoFilterInfo> autoFilterInfos;

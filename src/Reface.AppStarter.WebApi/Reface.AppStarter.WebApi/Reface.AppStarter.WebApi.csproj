@@ -55,6 +55,7 @@
     <Compile Include="Attributes\AutoFilterScopes.cs" />
     <Compile Include="CurrentWorkAccessor.cs" />
     <Compile Include="Events\BeginRequestEvent.cs" />
+    <Compile Include="Events\ControllerCreatedEvent.cs" />
     <Compile Include="Events\EndRequestEvent.cs" />
     <Compile Include="FilterProvider.cs" />
     <Compile Include="HttpControllerActivator.cs" />
@@ -82,7 +83,7 @@
       <Version>5.2.7</Version>
     </PackageReference>
     <PackageReference Include="Reface.AppStarter">
-      <Version>2.1.5</Version>
+      <Version>2.1.6</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

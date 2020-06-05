@@ -1,7 +1,6 @@
 ﻿using Helpers.Services;
 using Reface.AppStarter.WebApi;
 using System.Net.Http;
-using System.Web;
 using System.Web.Http.Filters;
 
 namespace Helpers.Filters

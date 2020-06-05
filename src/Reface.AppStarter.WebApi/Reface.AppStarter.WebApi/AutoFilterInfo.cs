@@ -1,5 +1,4 @@
-﻿using Reface.AppStarter.AppModules;
-using Reface.AppStarter.WebApi.Attributes;
+﻿using Reface.AppStarter.WebApi.Attributes;
 using System;
 using System.Reflection;
 

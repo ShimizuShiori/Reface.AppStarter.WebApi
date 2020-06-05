@@ -4,6 +4,9 @@ using System.Web.Http.Dispatcher;
 
 namespace Reface.AppStarter.AppContainers
 {
+    /// <summary>
+    /// 控制器容器
+    /// </summary>
     public class ControllerAppContainer : IControllerAppContainer
     {
         public void Dispose()
@@ -16,7 +19,7 @@ namespace Reface.AppStarter.AppContainers
 
         public void OnAppStarted(App app)
         {
-            IComponentContainer componentContainer = app.GetAppContainer<IComponentContainer>();
+            //IComponentContainer componentContainer = app.GetAppContainer<IComponentContainer>();
 
             HttpConfiguration configuration = GlobalConfiguration.Configuration;
 

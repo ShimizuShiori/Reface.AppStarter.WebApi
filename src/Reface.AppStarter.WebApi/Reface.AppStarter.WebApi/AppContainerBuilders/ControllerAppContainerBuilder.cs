@@ -6,6 +6,9 @@ using System.Reflection;
 
 namespace Reface.AppStarter.AppContainerBuilders
 {
+    /// <summary>
+    /// 构建器容器构建器
+    /// </summary>
     public class ControllerAppContainerBuilder : IAppContainerBuilder
     {
         private readonly List<Assembly> assemblies
