@@ -10,7 +10,7 @@ namespace Reface.AppStarter
 {
     /// <summary>
     /// 可以代替原有的 Global.asax 文件的类型。
-    /// 你可以通过调用父类的函数函数重新指定配置文件的路径。
+    /// 通过为你的 Global.asax 类型指定 <see cref="AppSetupBuilderAttribute"/> 特征，你可以重新指定配置文件的路径。
     /// </summary>
     /// <typeparam name="TAppModule">启动项所在的库的 <see cref="AppModule"/> 类型</typeparam>
     public abstract class RefaceHttpApplication<TAppModule> : HttpApplication

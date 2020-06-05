@@ -15,7 +15,7 @@
 * 通过事件总线的方式实现对 *ApiPrefix* 的设置
 * 简化控制器上 *Attribute* 的名称，改为 *ApiRoute*
 
-# 1.2.0
+# 1.2.1
 * 不再使用 *Autofac* 提供的控制器创建器和过滤器注入器
 * 使用自实现的 *HttpControllerActivator* 和 *FilterProvider* 实现了在一个请求中，无论是事件总线还是过滤器中得到的组件都位于同一个 *Autofac* 的 *Scope* 中
 * 添加事件 *BeginRequestEvent* , *EndRequstEvent* , *ControllerCreatedEvent* 分别表示 **请求开始**，**请求结束** 和 **控制器被创建后**

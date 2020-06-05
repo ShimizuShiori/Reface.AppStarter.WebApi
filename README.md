@@ -16,11 +16,9 @@
 
 # 依赖项
 
-* *Autofac.WebApi2 @ 4.2.1*
+* *Autofac.WebApi2 @ 5.0.0*
 * *Microsoft.AspNet.WebApi @ 5.2.7*
-* *Reface.AppStarter @ 1.1.0*
-* *Reface.CommandBus @ 1.1.1*
-* *Reface.EventBus @ 3.2.0*
+* *Reface.AppStarter @ 2.1.6*
 
 # Nuget 地址
 
