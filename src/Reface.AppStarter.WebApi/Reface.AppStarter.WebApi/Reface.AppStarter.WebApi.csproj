@@ -83,7 +83,7 @@
       <Version>5.2.7</Version>
     </PackageReference>
     <PackageReference Include="Reface.AppStarter">
-      <Version>2.1.6</Version>
+      <Version>2.1.7</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
