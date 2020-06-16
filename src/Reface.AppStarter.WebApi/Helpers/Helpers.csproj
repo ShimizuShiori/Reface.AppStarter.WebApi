@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=5.1.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Autofac.5.1.2\lib\net461\Autofac.dll</HintPath>
+    <Reference Include="Autofac, Version=5.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.5.2.0\lib\net461\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Autofac.Integration.WebApi">
       <HintPath>..\Reface.AppStarter.WebApi\bin\Debug\Autofac.Integration.WebApi.dll</HintPath>
@@ -45,7 +45,7 @@
       <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Reface.AppStarter, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Reface.AppStarter.2.1.7\lib\net461\Reface.AppStarter.dll</HintPath>
+      <HintPath>..\..\packages\Reface.AppStarter.2.1.11\lib\net461\Reface.AppStarter.dll</HintPath>
     </Reference>
     <Reference Include="Reface.AppStarter.WebApi">
       <HintPath>..\Reface.AppStarter.WebApi\bin\Debug\Reface.AppStarter.WebApi.dll</HintPath>

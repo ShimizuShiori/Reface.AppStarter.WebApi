@@ -2,18 +2,18 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Reface.AppStarter.WebApi</id>
-    <version>1.2.1</version>
+    <version>1.2.2</version>
     <title>Reface.AppStarter.WebApi</title>
     <authors>Felix</authors>
     <owners>Felix</owners>
     <description>启动 WebApi 项目</description>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/ShimizuShiori/Reface.AppStarter.WebApi</projectUrl>
-    <copyright>Copyright 2019</copyright>
+    <copyright>Copyright © 2002 Felix. All rights reserved.</copyright>
     <dependencies>
-      <dependency id="Autofac.WebApi2" version="5.0.0" />
-      <dependency id="Microsoft.AspNet.WebApi" version="5.2.7" />
-      <dependency id="Reface.AppStarter" version="2.1.7" />
+      <dependency id="Autofac.WebApi2" version="[5.0.0,5.1.0)" />
+      <dependency id="Microsoft.AspNet.WebApi" version="[5.2.7,5.3.0)" />
+      <dependency id="Reface.AppStarter" version="[2.1.7,2.2.0)" />
     </dependencies>
   </metadata>
   <files>

@@ -17,7 +17,7 @@
       "description": "WebApiConfig",
       "properties": {
         "Prefix": {
-          "description": "Prefix",
+          "description": "WebApi 的前缀，默认值是 api",
           "type": "string"
         }
       }
