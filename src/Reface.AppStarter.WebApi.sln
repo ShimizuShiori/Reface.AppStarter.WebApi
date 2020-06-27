@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "Reface.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Reface.AppStarter.WebApi\Helpers\Helpers.csproj", "{B9C25AD2-D2DF-45E1-8D5B-6FE53E4504BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiUT", "WebApiUT\WebApiUT.csproj", "{7610E3FA-5A4E-4220-95E5-ADEA8494A876}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{B9C25AD2-D2DF-45E1-8D5B-6FE53E4504BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9C25AD2-D2DF-45E1-8D5B-6FE53E4504BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9C25AD2-D2DF-45E1-8D5B-6FE53E4504BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7610E3FA-5A4E-4220-95E5-ADEA8494A876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7610E3FA-5A4E-4220-95E5-ADEA8494A876}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7610E3FA-5A4E-4220-95E5-ADEA8494A876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7610E3FA-5A4E-4220-95E5-ADEA8494A876}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +42,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{549209F6-5220-4948-A74B-C1805D001F3D} = {F5775814-B839-4E0A-BB12-062017A63B56}
 		{B9C25AD2-D2DF-45E1-8D5B-6FE53E4504BA} = {F5775814-B839-4E0A-BB12-062017A63B56}
+		{7610E3FA-5A4E-4220-95E5-ADEA8494A876} = {F5775814-B839-4E0A-BB12-062017A63B56}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10F2F6D0-8EB6-4218-A472-FD7313D950DE}

@@ -1,5 +1,4 @@
 ﻿using System.Web;
-using System.Web.Http.Filters;
 
 namespace Reface.AppStarter.WebApi
 {
@@ -13,6 +12,10 @@ namespace Reface.AppStarter.WebApi
         public static IWork GetWork(this HttpContext httpContext)
         {
             return (IWork)httpContext.Items["WORK"];
+        }
+        public static bool EnvIsWebApi(this App app)
+        {
+            return app.Context.GetOrCreate(Constant.APP_CONTEXT_KEY_ENV, key => "") == Constant.ENV_WEBAPI;
         }
     }
 }

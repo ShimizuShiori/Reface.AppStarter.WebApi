@@ -5,6 +5,7 @@ using Reface.AppStarter.WebApi.Events;
 using System;
 using System.Reflection;
 using System.Web;
+using System.Web.UI;
 
 namespace Reface.AppStarter
 {
@@ -63,10 +64,12 @@ namespace Reface.AppStarter
             this.AppSetupBuilderPrepared?.Invoke(this, new OnAppSetupBuilderPreparedEventArgs(builder));
 
             AppSetup appSetup = builder.Build();
+            appSetup.AppContext[Constant.APP_CONTEXT_KEY_ENV] = Constant.ENV_WEBAPI;
 
             TAppModule webAppModule = new TAppModule();
             this.AppSetupPrepared?.Invoke(this, new OnAppSetupPreparedEventArgs(appSetup));
             var app = appSetup.Start(webAppModule);
+
             this.AppStarted?.Invoke(this, new OnAppStartedEventArgs(app));
             this.Application.Set(Constant.APPLICATION_ITEM_KEY, app);
 

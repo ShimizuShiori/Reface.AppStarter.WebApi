@@ -19,10 +19,10 @@ namespace Reface.AppStarter.AppContainers
 
         public void OnAppStarted(App app)
         {
-            //IComponentContainer componentContainer = app.GetAppContainer<IComponentContainer>();
+            if (!app.EnvIsWebApi())
+                return;
 
             HttpConfiguration configuration = GlobalConfiguration.Configuration;
-
             GlobalConfiguration.Configure(WebApiRouterSetup.Register);
             GlobalConfiguration.Configuration.Services
                 .Replace(typeof(IHttpControllerActivator), new HttpControllerActivator());
