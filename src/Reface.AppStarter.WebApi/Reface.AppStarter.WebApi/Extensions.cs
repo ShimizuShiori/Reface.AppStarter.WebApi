@@ -17,5 +17,10 @@ namespace Reface.AppStarter.WebApi
         {
             return app.Context.GetOrCreate(Constant.APP_CONTEXT_KEY_ENV, key => "") == Constant.ENV_WEBAPI;
         }
+
+        public static bool IsRequest(this IWork work)
+        {
+            return work.Context.GetOrCreate<bool>("IsRequest", key => false);
+        }
     }
 }

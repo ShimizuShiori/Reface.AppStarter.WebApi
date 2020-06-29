@@ -46,6 +46,7 @@ namespace Reface.AppStarter
         {
             App app = (App)this.Application.GetApp();
             var work = app.BeginWork("HttpRequest");
+            work.Context["IsRequest"] = true;
             HttpContext httpContext = HttpContext.Current;
             httpContext.Items["WORK"] = work;
             work.PublishEvent(new BeginRequestEvent(this, httpContext));
