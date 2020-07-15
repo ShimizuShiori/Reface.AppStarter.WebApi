@@ -5,7 +5,6 @@ using Reface.AppStarter.WebApi.Events;
 using System;
 using System.Reflection;
 using System.Web;
-using System.Web.UI;
 
 namespace Reface.AppStarter
 {

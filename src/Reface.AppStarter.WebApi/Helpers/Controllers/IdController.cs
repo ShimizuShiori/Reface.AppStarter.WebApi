@@ -39,5 +39,12 @@ namespace Helpers.Controllers
             var ss = GlobalConfiguration.Configuration.Services;
             return result;
         }
+
+        [HttpGet]
+        [Route("i")]
+        public string GetI()
+        {
+            return this.User.Identity.Name;
+        }
     }
 }
